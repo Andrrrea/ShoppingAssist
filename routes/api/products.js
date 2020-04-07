@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
     }
 });
 
-//create product
+//create (add) a product
 router.post('/', (req, res) => {
     const newProduct = {
         id: uuid.v4(),
@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     } else {
     //add this new product to array of Products
     products.push(newProduct);
-    res.json(products);
+    res.redirect('/');
     }
   
 })
