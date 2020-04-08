@@ -26,7 +26,7 @@ app.get('/', (req, res) => res.render('index', {
 
 //set static folder
 //point to the folder that is going to be used as static folder
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Products API Routes
 app.use('/api/products', require('./routes/api/products'));

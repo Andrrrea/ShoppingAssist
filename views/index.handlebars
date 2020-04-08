@@ -1,4 +1,4 @@
-<h1 class="text-center mb-3">{{title}}</h1>
+<h1 class="text-center mb-5">{{title}}</h1>
 
 {{!-- <form action="/api/products" method="POST" class="mb-4">
     <div class="form-group">
@@ -16,14 +16,10 @@
     <input type="submit" value="Add Product" class="btn btn-primary btn-block">
 </form> --}}
 
+<div class="offset-md-3 col-md-6">
 <h4>Welche Produkte sollen auf den Einkaufszettel?</h4>
-{{!-- <ul>
-    {{#each products}}
-    <li class="list-group-item">{{this.name}}: {{this.x}}, {{this.y}}</li>
-    {{/each}}
-</ul> --}}
 
-<div class="dropdownMenus col-md-12 mb-3">
+<div class="dropdownMenus col-md-12 mb-5">
   <div class='form-field'>
     <label for='product'></label>
     <select id='product' class='form-control mb-3'>
@@ -35,25 +31,31 @@
     <button onclick="addToList()" type="button" class="btn btn-primary" name="add" value="Add">Hinzufügen</button>
   </div>
   </div>
+  </div>
 
+<div class="offset-md-3 col-md-6">
 <h4>Deine Einkaufsliste</h4>
   <div class="col-md-12 mb-3">
-    <ul id ="list">
-
+    <ul id="list">
+     
     </ul>
         <button id="add-button" type="button" class="btn btn-primary" name="add" value="Add">Kürzeste Shopping-Route finden</button>
   </div>
-
+</div>
 <script>
+
+
   var shoppinglist = [];
-  
+
   function addToList() {
     var e = document.getElementById("product");
 	  var result = e.options[e.selectedIndex].value; 
 	  shoppinglist.push(result);
     console.log(shoppinglist);
     document.getElementById("list").innerHTML = shoppinglist;
-  } 
+  }
+
+
 </script>
 
   {{!--
@@ -62,3 +64,5 @@
   //Array ausgeben als Shopping list
   //Wenn was hinzugefügt werden soll, muss Liste upgedated werden
   //Array ans Backend senden (mit zweitem Button -> Shopping-Route ) --}}
+
+ 

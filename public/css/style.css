@@ -1,4 +1,9 @@
 body {
-    background: #333;
+    background-image: url("../img/shopping.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
     color: #fff;
+}
+.div-inline{
+    display:inline-block;
 }
