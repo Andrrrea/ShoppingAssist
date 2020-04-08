@@ -1,6 +1,6 @@
 <h1 class="text-center mb-3">{{title}}</h1>
 
-<form action="/api/products" method="POST" class="mb-4">
+{{!-- <form action="/api/products" method="POST" class="mb-4">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" class="form-control">
@@ -14,11 +14,32 @@
         <input type="number" name="y" class="form-control">
     </div>
     <input type="submit" value="Add Product" class="btn btn-primary btn-block">
-</form>
+</form> --}}
 
-<h4>Products</h4>
-<ul>
+<h4>Welche Produkte sollen auf den Einkaufszettel?</h4>
+{{!-- <ul>
     {{#each products}}
     <li class="list-group-item">{{this.name}}: {{this.x}}, {{this.y}}</li>
     {{/each}}
-</ul>
+</ul> --}}
+
+<div class="dropdownMenus col-md-12">
+  <div class='form-field'>
+    <label for='product'></label>
+    <select id='product' class='form-control'>
+      <option>Wähle deine Produkte</option>
+      {{#each products}}
+      <option value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <button type="button" class="btn btn-primary" name="add" value="Add">Hinzufügen</button>
+  </div>
+  </div>
+
+<h4>Deine Einkaufsliste</h4>
+  <div class="col-md-12">
+    <ul id="list">
+
+    </ul>
+        <button type="button" class="btn btn-primary" name="add" value="Add">Kürzeste Shopping-Route finden</button>
+  </div>
