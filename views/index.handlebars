@@ -23,23 +23,42 @@
     {{/each}}
 </ul> --}}
 
-<div class="dropdownMenus col-md-12">
+<div class="dropdownMenus col-md-12 mb-3">
   <div class='form-field'>
     <label for='product'></label>
-    <select id='product' class='form-control'>
+    <select id='product' class='form-control mb-3'>
       <option>Wähle deine Produkte</option>
       {{#each products}}
-      <option value="{{this.name}}">{{this.name}}</option>
+      <option id="chosen_product">{{this.name}}</option>
       {{/each}}
     </select>
-    <button type="button" class="btn btn-primary" name="add" value="Add">Hinzufügen</button>
+    <button onclick="addToList()" type="button" class="btn btn-primary" name="add" value="Add">Hinzufügen</button>
   </div>
   </div>
 
 <h4>Deine Einkaufsliste</h4>
-  <div class="col-md-12">
-    <ul id="list">
+  <div class="col-md-12 mb-3">
+    <ul id ="list">
 
     </ul>
-        <button type="button" class="btn btn-primary" name="add" value="Add">Kürzeste Shopping-Route finden</button>
+        <button id="add-button" type="button" class="btn btn-primary" name="add" value="Add">Kürzeste Shopping-Route finden</button>
   </div>
+
+<script>
+  var shoppinglist = [];
+  
+  function addToList() {
+    var e = document.getElementById("product");
+	  var result = e.options[e.selectedIndex].value; 
+	  shoppinglist.push(result);
+    console.log(shoppinglist);
+    document.getElementById("list").innerHTML = shoppinglist;
+  } 
+</script>
+
+  {{!--
+  //Funktion für Button (Hinzufügen)
+  //Namen der ausgewählten Produkte in einem Array abspeichern (ohne Datei) Name + id
+  //Array ausgeben als Shopping list
+  //Wenn was hinzugefügt werden soll, muss Liste upgedated werden
+  //Array ans Backend senden (mit zweitem Button -> Shopping-Route ) --}}

@@ -20,10 +20,11 @@ router.get('/:id', (req, res) => {
 //create (add) a product
 router.post('/', (req, res) => {
     const newProduct = {
-        id: uuid.v4(),
-        x: req.body.x,
-        y: req.body.y,
-        name: req.body.name
+        //: uuid.v4(),
+        //x: req.body.x,
+        //y: req.body.y,
+        //name: req.body.name
+        
     }
     //check that required fields are filled
     if(!newProduct.x || !newProduct.y || !newProduct.name){
