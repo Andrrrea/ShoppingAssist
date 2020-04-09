@@ -37,13 +37,12 @@
 <h4>Deine Einkaufsliste</h4>
   <div class="col-md-12 mb-3">
     <ul id="list">
-     
+
     </ul>
         <button id="add-button" type="button" class="btn btn-primary" name="add" value="Add">Kürzeste Shopping-Route finden</button>
   </div>
 </div>
 <script>
-
 
   var shoppinglist = [];
 
@@ -52,7 +51,11 @@
 	  var result = e.options[e.selectedIndex].value; 
 	  shoppinglist.push(result);
     console.log(shoppinglist);
-    document.getElementById("list").innerHTML = shoppinglist;
+    //document.getElementById("list").innerHTML = shoppinglist;
+     var mylist = document.getElementById("list");
+     var li = document.createElement("li");
+     li.appendChild(document.createTextNode(result));
+     mylist.appendChild(li);
   }
 
 
